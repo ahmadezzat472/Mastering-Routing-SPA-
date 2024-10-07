@@ -11,7 +11,8 @@ import Contribute from "../pages/Contribute";
 import Login from "../pages/Login";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 
-const isLoggedIn = false
+const isLoggedIn = true
+const userData: {email: string} | null = isLoggedIn ? {email: "Ahmed"} : null
 
 const router = createBrowserRouter( 
     createRoutesFromElements(
@@ -22,12 +23,12 @@ const router = createBrowserRouter(
                 <Route path="contact" element={<Contact />} />
                 <Route path="about" element={<About />} />
                 <Route path="contribute" element={
-                    <ProtectedRoute isAllowedCondition={isLoggedIn} redirectPath="/login" >
+                    <ProtectedRoute isAllowedCondition={isLoggedIn} redirectPath="/login" data={userData}>
                         <Contribute />
                     </ProtectedRoute> }
                 />
                 <Route path="login" element={
-                    <ProtectedRoute isAllowedCondition={!isLoggedIn} redirectPath="/contribute" >
+                    <ProtectedRoute isAllowedCondition={!isLoggedIn} redirectPath="/contribute" data={userData}>
                         <Login />
                     </ProtectedRoute> }
                 />
