@@ -19,12 +19,12 @@ const Navbar = () => {
                         About Us
                     </NavLink>
                 </li>
-                <li className="hover:text-[#149eca] duration-200">
+                <li className="hover:text-[#eceff0] duration-200">
                     <NavLink className="px-3 py-2" to="/learn">
                         Learn
                     </NavLink>
                 </li>
-                <li className="hover:text-[#149eca] duration-200">
+                {/* <li className="hover:text-[#149eca] duration-200">
                     <NavLink className="px-3 py-2" to="/contribute">
                         Contribute
                     </NavLink>
@@ -33,7 +33,7 @@ const Navbar = () => {
                     <NavLink className="px-3 py-2" to="/login">
                         Login
                     </NavLink>
-                </li>
+                </li> */}
             </ul>
         </nav>
     );
