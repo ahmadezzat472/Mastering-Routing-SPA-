@@ -4,10 +4,13 @@ import AsideLearn from "../../components/AsideLearn";
 
 const LearnLayout = () => {
     return (
-        <div>
-            <Navbar />
+        <div className="learn-layout">
             <AsideLearn />
-            <Outlet />
+
+            <div className="ml-72">
+                <Navbar />
+                <Outlet />
+            </div>
         </div>
     )
 }
