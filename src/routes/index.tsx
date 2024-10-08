@@ -10,6 +10,8 @@ import LearnLayout from "../pages/learn/Layout";
 import Contribute from "../pages/Contribute";
 import Login from "../pages/Login";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
+import ErrorHandler from "../components/errors/ErrorHandler";
+import PageNotFound from "../pages/PageNotFound";
 
 const isLoggedIn = true
 const userData: {email: string} | null = isLoggedIn ? {email: "Ahmed"} : null
@@ -18,7 +20,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             {/* Root Layout */}
-            <Route path="/" element={<RootLayout />} >
+            <Route path="/" element={<RootLayout />} errorElement={<ErrorHandler />} >
                 <Route index element={<Home />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="about" element={<About />} />
@@ -40,6 +42,9 @@ const router = createBrowserRouter(
                 <Route path="installation" element={<Installation />} />
                 <Route path="thinking" element={<Thinking />} />
             </Route>
+
+            {/* Page Not Found */}
+            <Route path="*" element={<PageNotFound />} />
         </>
     )
 )
